@@ -11,6 +11,13 @@ public class InventoryController {
     @GetMapping("/check/{amount}")
     public boolean checkInventory(@PathVariable  int amount) {
         // Simulate checking inventory
-        return amount <= 5;
+        if (amount <= 5) {
+            System.out.println("Amount is fulfilled");
+            return true;
+        }
+        else {
+            System.out.println("Insufficient Inventory");
+            return false;
+        }
     }
 }

@@ -1,10 +1,19 @@
 services:
+#  rabbitmq:
+#    image: rabbitmq:4.0-management
+#    container_name: rabbitmq
+#    ports:
+#      - "5672:5672"     # RabbitMQ protocol (AMQP)
+#      - "15672:15672"   # Management UI
+#    environment:
+#      RABBITMQ_DEFAULT_USER: guest
+#      RABBITMQ_DEFAULT_PASS: guest
   rabbitmq:
-    image: rabbitmq:4.0-management
+    image: rabbitmq:3.9.11-management-alpine
     container_name: rabbitmq
     ports:
-      - "5672:5672"     # RabbitMQ protocol (AMQP)
-      - "15672:15672"   # Management UI
+      - "5672:5672"
+      - "15672:15672"
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
