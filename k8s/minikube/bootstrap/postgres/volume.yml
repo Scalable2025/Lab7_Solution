@@ -1,0 +1,77 @@
+# Customer volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-customer-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data/customer
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-customer-pvc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+# Fraud volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-fraud-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data/fraud
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-fraud-pvc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+# Notification volume
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgres-notification-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /mnt/data/notification
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-notification-pvc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi

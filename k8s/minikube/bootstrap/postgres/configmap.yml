@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+data:
+  POSTGRES_USER: "mado"
+  POSTGRES_PASSWORD: "password"
+  POSTGRES_DB_CUSTOMER: "customer"
+  POSTGRES_DB_FRAUD: "fraud"
+  POSTGRES_DB_NOTIFICATION: "notification"
